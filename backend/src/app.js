@@ -18,4 +18,9 @@ app.use(express.urlencoded({ extended: true, limit: "18kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+//import routes
+import blogRouter from "./routes/blog.routes.js";
+
+app.use("/api/v1/blogs", blogRouter);
+
 export { app };
