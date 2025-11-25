@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="bg-[#082B73] text-white">
+    <footer className="bg-[#6285fa] text-white">
       {/* CTA Banner */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-4">
