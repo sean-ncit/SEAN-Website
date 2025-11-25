@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Laptop, Users, FlaskConical } from "lucide-react";
 
 export function Hero() {
     return (
@@ -58,11 +57,11 @@ export function Hero() {
                     {/* Visual Section */}
                     <div className="relative flex justify-center md:justify-end">
                         <div className="w-full max-w-md h-[400px] rounded-xl shadow-xl overflow-hidden bg-gradient-to-br from-blue-100 to-white flex items-center justify-center">
-                            {/* Placeholder for college department photo */}
-                            <div className="text-blue-700 font-semibold text-center px-4">
-                                <span className="block text-xl mb-2">NCIT Software Labs</span>
-                                <span className="block text-sm">Students coding, collaborating, and innovating</span>
-                            </div>
+                            <img
+                                src="hero.webp"
+                                alt="NCIT Software Labs"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </div>
                 </div>
