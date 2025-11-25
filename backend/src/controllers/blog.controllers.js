@@ -28,14 +28,12 @@ const createBlog = asyncHandler(async (req, res) => {
 });
 
 const getAllBlogs = asyncHandler(async (req, res) => {
-  // Extract pagination parameters from query string
+  // Extract pagination parameters from query
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
 
-  // Calculate skip value
   const skip = (page - 1) * limit;
 
-  // Fetch blogs with pagination
   const blogs = await Blog.find({})
     .sort({ createdAt: -1 })
     .skip(skip)
@@ -45,7 +43,6 @@ const getAllBlogs = asyncHandler(async (req, res) => {
   const totalBlogs = await Blog.countDocuments();
   const totalPages = Math.ceil(totalBlogs / limit);
 
-  // Prepare pagination metadata
   const paginationData = {
     blogs,
     pagination: {
