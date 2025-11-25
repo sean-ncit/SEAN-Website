@@ -39,9 +39,7 @@ export default function Navbar() {
           <MenuLink to="/">Home</MenuLink>
           <MenuLink to="/resources">Resources</MenuLink>
           <MenuLink to="/activities">Activities</MenuLink>
-          <MenuLink to="/alumni">Alumni</MenuLink>
-          <MenuLink to="/achievements">Achievements</MenuLink>
-          <MenuLink to="/contact">Contact</MenuLink>
+          <MenuLink to="/about">About</MenuLink>
         </nav>
 
         {/* CTA + Mobile Menu */}
@@ -92,10 +90,8 @@ export default function Navbar() {
           <div className="p-4">
             <div className="flex items-center justify-between mb-6">
               <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-                <div className="w-8 h-8 rounded-sm flex items-center justify-center bg-[#0057B8] text-white font-bold">
-                  NC
-                </div>
-                <span className="text-sm font-semibold text-[#111]">NCIT Software Dept.</span>
+               
+                <span className="text-sm font-semibold text-[#111]">NCIT Software</span>
               </Link>
               <button onClick={() => setOpen(false)}>
                 <svg className="w-6 h-6 text-[#111]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,9 +105,8 @@ export default function Navbar() {
               <MenuLink to="/">Home</MenuLink>
               <MenuLink to="/resources">Resources</MenuLink>
               <MenuLink to="/activities">Activities</MenuLink>
-              <MenuLink to="/alumni">Alumni</MenuLink>
-              <MenuLink to="/achievements">Achievements</MenuLink>
-              <MenuLink to="/contact">Contact</MenuLink>
+              <MenuLink to="/about">About</MenuLink>
+
 
               <Link
                 to="/apply"
