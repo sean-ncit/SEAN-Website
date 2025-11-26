@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* CTA + Mobile Menu */}
         <div className="flex items-center gap-4">
           <Link
-            to="/apply"
+            to="https://ncit.edu.np/entrance-application-form"
             className="hidden md:inline-block px-4 py-2 rounded text-white font-semibold"
             style={{ backgroundColor: NCIT_BLUE }}
           >
@@ -109,10 +109,9 @@ export default function Navbar() {
 
 
               <Link
-                to="/apply"
+                to="https://ncit.edu.np/entrance-application-form"
                 className="mt-4 block px-4 py-2 rounded text-white text-center font-semibold"
                 style={{ backgroundColor: NCIT_BLUE }}
-                onClick={() => setOpen(false)}
               >
                 Apply Now
               </Link>

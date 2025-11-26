@@ -16,7 +16,7 @@ export function Footer() {
           </div>
           <div>
             <Link
-              to="/apply"
+              to="https://ncit.edu.np/entrance-application-form"
               className="px-6 py-3 bg-blue-600 text-white rounded-md hover:shadow-lg transition"
             >
               Apply
