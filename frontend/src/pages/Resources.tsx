@@ -8,46 +8,47 @@ type Resource = {
     subject: string;
     description?: string;
     category: string;
-    semester: number;
+    semester: number | string;
     tags: string[];
     file_url: string;
     is_recommended?: boolean;
 };
 
 const staticResources: Resource[] = [
-    {
-        id: 1,
-        title: 'Data Structures Syllabus',
-        subject: 'Data Structures',
-        description: 'Official syllabus for Data Structures.',
-        category: 'Syllabus',
-        semester: 3,
-        tags: ['syllabus', 'data structures'],
-        file_url: '#',
-        is_recommended: true,
-    },
-    {
-        id: 2,
-        title: 'OOP Lab Manual',
-        subject: 'Object Oriented Programming',
-        description: 'Lab manual for OOP practicals.',
-        category: 'Lab Manual',
-        semester: 2,
-        tags: ['lab', 'oop'],
-        file_url: '#',
-        is_recommended: false,
-    },
-    {
-        id: 3,
-        title: 'Project Template',
-        subject: 'Software Engineering',
-        description: 'Template for semester projects.',
-        category: 'Project Template',
-        semester: 5,
-        tags: ['template', 'project'],
-        file_url: '#',
-        is_recommended: true,
-    },
+{
+    id: 1,
+    title: 'Ultimate Notes',
+    subject: 'Previous Year Notes',
+    description: 'Comprehensive notes and resources compiled from previous years.',
+    category: 'Syllabus',
+    semester: "All",
+    tags: ['syllabus', 'data structures', 'notes'],
+    file_url: 'https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT',
+    is_recommended: true,
+},
+
+{
+    id: 2,
+    title: "Final Thesis Plagiarism Checking",
+    subject: "Thesis Evaluation",
+    description: "Guidelines and resources for conducting plagiarism checks on final thesis submissions.",
+    category: "Reference Material",
+    semester: 2,
+    tags: ["thesis", "plagiarism"],
+    file_url: "https://ncit.edu.np/storage/downloads/attachment/iNk47VST3G2rVzM7Lb0FPWZi4j1wP0OAFcVKhqQs.rar",
+    is_recommended: false
+},
+{
+    id: 3,
+    title: "BESE Syllabus",
+    subject: "Software Engineering",
+    description: "Official syllabus for the BE Software Engineering program.",
+    category: "Syllabus",
+    semester: "All",
+    tags: ["syllabus", "software-engineering"],
+    file_url: "https://ncit.edu.np/courses/be-software",
+    is_recommended: true
+},
     // Add more static resources as needed
 ];
 

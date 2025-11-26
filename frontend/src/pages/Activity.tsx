@@ -14,24 +14,25 @@ type Activity = {
 };
 
 const staticActivities: Activity[] = [
-    {
-        id: 1,
-        title: 'Annual Tech Fest',
-        summary: 'Join us for our annual tech fest featuring workshops, competitions, and more.',
-        content: 'The Annual Tech Fest brings together students and professionals for a day of learning and networking.',
-        category: 'Events',
-        date: '2024-05-10',
-        image_url: '/images/techfest.jpg',
-    },
-    {
-        id: 2,
-        title: 'Python Workshop',
-        summary: 'A hands-on workshop on Python programming for beginners.',
-        content: 'Learn the basics of Python and build your first project.',
-        category: 'Workshops',
-        date: '2024-04-20',
-        image_url: '/images/pythonworkshop.jpg',
-    },
+{
+    id: 1,
+    title: 'Orientation 2082',
+    summary: 'Kick off the new academic year with our orientation program designed to welcome and guide incoming students.',
+    content: 'Orientation 2082 introduces new students to campus life, academic resources, student clubs, and support services. Join us for sessions, tours, and activities aimed at helping you start your journey with confidence.',
+    category: 'Events',
+    date: '2025-11-11',
+    image_url: '/orien.jpg',
+},
+{
+    id: 2,
+    title: 'NCIT Tech Skills Competition',
+    summary: 'A platform for students to demonstrate their technical abilities through challenges and problem-solving tasks.',
+    content: 'The NCIT Tech Skills Competition features coding challenges, problem-solving rounds, and hands-on technical tasks designed to test and enhance participants’ real-world skills. Open to all students looking to push their limits and showcase their expertise.',
+    category: 'Competitions',
+    date: '2024-04-20',
+    image_url: 'ncit_tech.jpg',
+},
+
     {
         id: 3,
         title: 'Hackathon Winner',
@@ -39,16 +40,16 @@ const staticActivities: Activity[] = [
         content: 'Our team developed an innovative solution for smart cities.',
         category: 'Achievements',
         date: '2024-03-15',
-        image_url: '/images/hackathon.jpg',
+        image_url: '/hackathon.jpg',
     },
     {
         id: 4,
-        title: 'Robotics Club Meetup',
+        title: 'Software Club Meetup',
         summary: 'Monthly meetup for robotics enthusiasts.',
         content: 'Discuss new projects and collaborate with club members.',
         category: 'Club Activities',
-        date: '2024-06-01',
-        image_url: '/images/roboticsclub.jpg',
+        date: '2025-10-01',
+        image_url: '/meetup.jpg',
     },
     {
         id: 5,
@@ -56,8 +57,8 @@ const staticActivities: Activity[] = [
         summary: 'Important announcement regarding the upcoming semester.',
         content: 'Please check your emails for registration details.',
         category: 'Announcements',
-        date: '2024-05-25',
-        image_url: '/images/announcement.jpg',
+        date: '2024-10-25',
+        image_url: 'semester.jpg',
     },
     {
         id: 6,
@@ -65,8 +66,8 @@ const staticActivities: Activity[] = [
         summary: 'Participate in our inter-college coding competition.',
         content: 'Showcase your coding skills and win exciting prizes.',
         category: 'Competitions',
-        date: '2024-04-30',
-        image_url: '/images/codingcompetition.jpg',
+        date: '2025-05-04',
+        image_url: 'ccompi.jpg',
     },
 ];
 
