@@ -54,4 +54,66 @@ const getAllBlogs = asyncHandler(async (req, res) => {
     );
 });
 
-export { createBlog, getAllBlogs };
+const updateBlog = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { title, slug, content } = req.body;
+
+  if (!id) {
+    throw new ApiError(400, "Blog ID is required");
+  }
+
+  // Check if blog exists and if slug already exists (if being updated)
+  const [existingBlog, slugExists] = await Promise.all([
+    Blog.findById(id),
+    slug ? Blog.findOne({ slug, _id: { $ne: id } }) : Promise.resolve(null)
+  ]);
+
+  if (!existingBlog) {
+    throw new ApiError(404, "Blog not found");
+  }
+
+  if (slug && slugExists) {
+    throw new ApiError(409, "A blog with this slug already exists");
+  }
+
+  // Prepare update object with only provided fields
+  const updateFields = {};
+  if (title !== undefined) updateFields.title = title.trim();
+  if (slug !== undefined) updateFields.slug = slug.trim();
+  if (content !== undefined) updateFields.content = content.trim();
+
+  const updatedBlog = await Blog.findByIdAndUpdate(
+    id,
+    updateFields,
+    {
+      new: true, 
+      runValidators: true,
+    }
+  );
+
+  return res
+    .status(200)
+    .json(ApiResponse.data(200, updatedBlog, "Blog updated successfully"));
+});
+
+const deleteBlog = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    throw new ApiError(400, "Blog ID is required");
+  }
+
+  const blog = await Blog.findById(id);
+
+  if (!blog) {
+    throw new ApiError(404, "Blog not found");
+  }
+
+  await Blog.findByIdAndDelete(id);
+
+  return res
+    .status(200)
+    .json(ApiResponse.message(200, "Blog deleted successfully"));
+});
+
+export { createBlog, getAllBlogs, updateBlog, deleteBlog };
