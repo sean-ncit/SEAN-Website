@@ -86,7 +86,7 @@ const updateBlog = asyncHandler(async (req, res) => {
     id,
     updateFields,
     {
-      new: true, 
+      new: true,
       runValidators: true,
     }
   );
@@ -103,13 +103,11 @@ const deleteBlog = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Blog ID is required");
   }
 
-  const blog = await Blog.findById(id);
+  const deletedBlog = await Blog.findByIdAndDelete(id);
 
-  if (!blog) {
+  if (!deletedBlog) {
     throw new ApiError(404, "Blog not found");
   }
-
-  await Blog.findByIdAndDelete(id);
 
   return res
     .status(200)
