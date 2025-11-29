@@ -25,44 +25,44 @@ const labs = [
   {
     id: "cloud",
     title: "Database & Cloud Systems Lab",
-    desc: "Cloud platform experiments, distributed DBs, and performance engineering." ,
+    desc: "Cloud platform experiments, distributed DBs, and performance engineering.",
     img: "lab2.png"
   },
 ];
 
 const faculty = [
-  { name: "Er. Bhusan Thapa(HOD)", title: "MSc Wireless communication System Engineering,Greenwich, UK", areas: ["Software Engineering", "Systems", "Java"],img:""},
-  { name: "Er. Madan Kadariya", title: "MSc IT Engineering, Lappeenranta University of Technology, Finland", areas: ["OS", "Computer Networks"], img:"mk.jpeg" },
-  { name: "Dr. Roshan Chitrakar", title: "PhD Information Security, Wuhan University, China", areas: ["Security", "Cloud Systems"], img:"rc.jpg" },
-  { name: "Dr. Ashim Khadka", title: "PhD Electronics Engineering, University of Greenwich, UK", areas: ["Electronics", "Research"], img:"ak.jpeg" },
+  { name: "Er. Bhusan Thapa(HOD)", title: "MSc Wireless communication System Engineering,Greenwich, UK", areas: ["Software Engineering", "Systems", "Java"], img: "" },
+  { name: "Er. Madan Kadariya", title: "MSc IT Engineering, Lappeenranta University of Technology, Finland", areas: ["OS", "Computer Networks"], img: "mk.jpeg" },
+  { name: "Dr. Roshan Chitrakar", title: "PhD Information Security, Wuhan University, China", areas: ["Security", "Cloud Systems"], img: "rc.jpg" },
+  { name: "Dr. Ashim Khadka", title: "PhD Electronics Engineering, University of Greenwich, UK", areas: ["Electronics", "Research"], img: "ak.jpeg" },
 ];
 
 
 
 const clubs = [
-  { 
-    name: "Software Committee", 
-    desc: "Technical initiatives, project coordination, and software-focused activities." 
+  {
+    name: "Software Committee",
+    desc: "Technical initiatives, project coordination, and software-focused activities."
   },
-  { 
-    name: "IEEE", 
-    desc: "Professional development, engineering events, and community-driven technical programs." 
+  {
+    name: "IEEE",
+    desc: "Professional development, engineering events, and community-driven technical programs."
   },
-  { 
-    name: "NOSK", 
-    desc: "Open-source development, hackathons, and collaborative coding projects." 
+  {
+    name: "NOSK",
+    desc: "Open-source development, hackathons, and collaborative coding projects."
   },
-  { 
-    name: "NTK", 
-    desc: "Friday forum sessions, workshops, and knowledge-sharing events." 
+  {
+    name: "NTK",
+    desc: "Friday forum sessions, workshops, and knowledge-sharing events."
   },
 ];
 
 
 const alumni = [
-  { name: "Satya Raj Awasthi", role: "Software Engineer — Esewa", img: "/satya.jpeg" },
-  { name: "Mukesh Kumar Chaudhary", role: "CTO- Astergaze Tech.", img: "mukesh.webp" },
-  { name: "Bibek Dhakal", role: "Founder — Dl.Surf Startup", img: "/bibek.jpeg" },
+  { name: "Satya Raj Awasthi", role: "Software Engineer at Esewa", img: "/satya.jpeg" },
+  { name: "Mukesh Kumar Chaudhary", role: "CTO at Astergaze Tech.", img: "mukesh.webp" },
+  { name: "Bibek Dhakal", role: "COO at Dl.Surf Startup", img: "/bibek.jpeg" },
 ];
 
 
@@ -164,7 +164,7 @@ export default function About() {
         </div>
       </section>
 
-            {/* STUDENT CLUBS */}
+      {/* STUDENT CLUBS */}
       <section className="w-full bg-[#F4F6F9]" id="clubs">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20">
           <h3 className="text-3xl font-bold text-[#082B73]">Student Clubs & Communities</h3>
