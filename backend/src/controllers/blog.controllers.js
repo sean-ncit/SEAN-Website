@@ -78,9 +78,27 @@ const updateBlog = asyncHandler(async (req, res) => {
 
   // Prepare update object with only provided fields
   const updateFields = {};
-  if (title !== undefined) updateFields.title = title.trim();
-  if (slug !== undefined) updateFields.slug = slug.trim();
-  if (content !== undefined) updateFields.content = content.trim();
+  if (title !== undefined) {
+    const trimmedTitle = title.trim();
+    if (trimmedTitle === "") {
+      throw new ApiError(400, "Title cannot be empty");
+    }
+    updateFields.title = trimmedTitle;
+  }
+  if (slug !== undefined) {
+    const trimmedSlug = slug.trim();
+    if (trimmedSlug === "") {
+      throw new ApiError(400, "Slug cannot be empty");
+    }
+    updateFields.slug = trimmedSlug;
+  }
+  if (content !== undefined) {
+    const trimmedContent = content.trim();
+    if (trimmedContent === "") {
+      throw new ApiError(400, "Content cannot be empty");
+    }
+    updateFields.content = trimmedContent;
+  }
 
   const updatedBlog = await Blog.findByIdAndUpdate(
     id,
