@@ -65,7 +65,7 @@ const updateBlog = asyncHandler(async (req, res) => {
   // Check if blog exists and if slug already exists (if being updated)
   const [existingBlog, slugExists] = await Promise.all([
     Blog.findById(id),
-    slug ? Blog.findOne({ slug, _id: { $ne: id } }) : Promise.resolve(null)
+    slug ? Blog.findOne({ slug, _id: { $ne: id } }) : Promise.resolve(null),
   ]);
 
   if (!existingBlog) {
@@ -100,14 +100,10 @@ const updateBlog = asyncHandler(async (req, res) => {
     updateFields.content = trimmedContent;
   }
 
-  const updatedBlog = await Blog.findByIdAndUpdate(
-    id,
-    updateFields,
-    {
-      new: true,
-      runValidators: true,
-    }
-  );
+  const updatedBlog = await Blog.findByIdAndUpdate(id, updateFields, {
+    new: true,
+    runValidators: true,
+  });
 
   return res
     .status(200)
