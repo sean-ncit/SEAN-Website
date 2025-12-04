@@ -40,7 +40,7 @@ const uploadToCloudinary = async (fileBuffer, folder = 'uploads') => {
             },
             (error, result) => {
                 if (error) {
-                    reject(new ApiError(500, 'Failed to upload image to Cloudinary'));
+                    reject(new ApiError(500, `Failed to upload image to Cloudinary: ${error.message}`));
                 } else {
                     resolve(result);
                 }
