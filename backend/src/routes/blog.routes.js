@@ -5,7 +5,7 @@ import { uploadMultiple } from "../middlewares/cloudinary.middlewares.js";
 
 const router = Router();
 
-router.route("/").post(uploadMultiple('photos', 5, 'blogs'), createBlog);
+router.route("/").post(authMiddleware, uploadMultiple('photos', 5, 'blogs'), createBlog);
 router.route("/filter").get(getAllBlogs);
 router.route("/:id").put(authMiddleware, uploadMultiple('photos', 5, 'blogs'), updateBlog);
 router.route("/:id").delete(authMiddleware, deleteBlog);
