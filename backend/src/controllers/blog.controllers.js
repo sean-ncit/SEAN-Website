@@ -5,23 +5,34 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 const createBlog = asyncHandler(async (req, res) => {
   const { title, slug, content } = req.body;
+
   if (title == "") {
-    return new ApiError(400, "Title is required");
+    throw new ApiError(400, "Title is required");
   }
   if (slug == "") {
-    return new ApiError(400, "Slug is required");
+    throw new ApiError(400, "Slug is required");
   }
   if (content == "") {
-    return new ApiError(400, "Content is required");
+    throw new ApiError(400, "Content is required");
   }
+
+  // Handle uploaded images
+  const photos = [];
+  if (req.cloudinaryResults && req.cloudinaryResults.length > 0) {
+    photos.push(...req.cloudinaryResults.map(result => result.secure_url));
+  }
+
   const blog = await Blog.create({
     title,
     slug,
     content,
+    photos,
   });
+
   if (!blog) {
     throw new ApiError(500, "Error creating blog");
   }
+
   return res
     .status(201)
     .json(ApiResponse.data(200, blog, "blog created successfully"));
